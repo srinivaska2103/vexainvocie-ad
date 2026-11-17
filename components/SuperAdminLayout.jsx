@@ -140,13 +140,22 @@ export function SuperAdminLayout({ children }) {
 
         <div className="p-4 border-t border-slate-100 space-y-2">
           <a
-            href="http://localhost:3000/dashboard"
+            href={process.env.NEXT_PUBLIC_APP_URL || 'https://app.vexainvoice.vexatech.in'}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
           >
             <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-            <span>Open Company App (:3000)</span>
+            <span>Open Company App (Live)</span>
+          </a>
+          <a
+            href="http://localhost:3000/dashboard"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-medium text-slate-400 hover:text-slate-700 hover:bg-slate-50 transition-colors"
+          >
+            <ExternalLink className="w-3 h-3 text-slate-400" />
+            <span>Dev App (:3000)</span>
           </a>
           <button
             onClick={() => logout()}

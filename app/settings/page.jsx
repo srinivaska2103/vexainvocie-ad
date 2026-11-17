@@ -114,33 +114,35 @@ export default function PlatformSettingsPage() {
           </div>
         </div>
 
-        {/* 2. Free Trial & Access Policy */}
+        {/* 2. Commercial Access & Pay-and-Use Policy */}
         <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
           <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider flex items-center gap-2">
-            <Clock className="w-4 h-4 text-blue-600" />
-            <span>Free Trial Policy Specifications</span>
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <span>Commercial Access & Pay-and-Use Policy</span>
           </h3>
 
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
             <div className="flex justify-between items-center text-slate-700">
-              <span className="text-slate-500">Duration:</span>
-              <span className="font-bold text-slate-900">{trial?.duration_days || 7} Calendar Days (Strict Backend Enforcement)</span>
+              <span className="text-slate-500">Product Model:</span>
+              <span className="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                100% Pay & Use (No Free Trial)
+              </span>
             </div>
             <div className="flex justify-between items-center text-slate-700">
-              <span className="text-slate-500">Automated Transition:</span>
-              <span className="font-bold text-slate-900">Prompts for ₹{trial?.standard_plan_price || 599}/month Cashfree Mandate</span>
+              <span className="text-slate-500">Subscription Requirement:</span>
+              <span className="font-bold text-slate-900">Active Paid Plan or ₹59,999 Lifetime License Required</span>
             </div>
             <div className="flex justify-between items-center text-slate-700">
-              <span className="text-slate-500">Grace Period Access:</span>
-              <span className="font-bold text-emerald-700">{trial?.grace_period_days || 3} Days with Renewal Reminders</span>
+              <span className="text-slate-500">Monthly Plan Billing:</span>
+              <span className="font-bold text-slate-900">₹{trial?.standard_plan_price || 599}/month via Razorpay Mandate</span>
             </div>
             <div className="flex justify-between items-center text-slate-700">
-              <span className="text-slate-500">Restricted State:</span>
-              <span className="font-bold text-slate-700">Navigation locked to /settings/subscription</span>
+              <span className="text-slate-500">Unpaid / Lapsed Account State:</span>
+              <span className="font-bold text-rose-700">Access Locked to /settings/subscription Payment Page</span>
             </div>
             <div className="flex justify-between items-center text-slate-700 pt-2 border-t border-slate-200/70">
               <span className="text-slate-500">Enforcement Architecture:</span>
-              <span className="font-mono text-[11px] font-semibold text-blue-600">{trial?.enforcement_model || 'Backend Middleware Guard'}</span>
+              <span className="font-mono text-[11px] font-semibold text-blue-600">{trial?.enforcement_model || 'Strict Backend Middleware Guard'}</span>
             </div>
           </div>
 
